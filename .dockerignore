@@ -6,3 +6,7 @@ node_modules
 !.env.example
 *.log
 .DS_Store
+
+# Preserved historical workstreams are not runtime build inputs.
+workstreams
+history

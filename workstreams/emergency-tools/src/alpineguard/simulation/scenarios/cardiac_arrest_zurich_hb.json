@@ -1,0 +1,294 @@
+{
+  "scenario_id": "cardiac_arrest_zurich_hb",
+  "title": "Cardiac arrest in the main hall of Zürich HB",
+  "canton": "ZH",
+  "clock_start": "2026-10-10T15:03:00+02:00",
+  "data_note": "All calls, units, AEDs, volunteers and hospital capabilities are simulated. Names and coordinates of the station and hospitals are real (swisstopo search API, 2026-10-10).",
+  "operator_goal": "Prepare this incident for the 144 operator: create the incident card, get the approved caller instructions, find the help that can arrive first, and propose every action that the operator should approve now. Finish with a short summary for the operator.",
+  "calls": [
+    {
+      "call_id": "call-hb-001",
+      "centre": "144",
+      "received_at": "2026-10-10T15:02:10+02:00",
+      "language": "de",
+      "location": {
+        "latitude": 47.37795,
+        "longitude": 8.54025,
+        "altitude_m": 408
+      },
+      "location_accuracy_m": 12,
+      "location_source": "aml",
+      "address_hint": "Zürich HB, Haupthalle",
+      "caller_number_masked": "+41 79 *** ** 28",
+      "transcript": [
+        "Caller: Hallo! Ein Mann ist hier in der Haupthalle vom Zürich HB zusammengebrochen, vor der grossen Anzeigetafel!",
+        "Voice agent: Ist er wach? Reagiert er, wenn Sie ihn laut ansprechen?",
+        "Caller: Nein, er reagiert gar nicht. Er schnappt nur ab und zu nach Luft.",
+        "Voice agent: Wie alt ist er ungefähr? Sind Sie allein?",
+        "Caller: Vielleicht 60. Ich bin Thomas Brunner, meine Nummer ist 079 384 19 28. Hier sind viele Leute um uns herum."
+      ]
+    }
+  ],
+  "social_posts": [],
+  "units": [
+    {
+      "unit_id": "amb-11",
+      "name": "SRZ ambulance 11 (simulated)",
+      "kind": "ambulance",
+      "centre": "144",
+      "location": {
+        "latitude": 47.3841,
+        "longitude": 8.5305
+      },
+      "status": "available"
+    },
+    {
+      "unit_id": "amb-23",
+      "name": "SRZ ambulance 23 (simulated)",
+      "kind": "ambulance",
+      "centre": "144",
+      "location": {
+        "latitude": 47.3665,
+        "longitude": 8.5486
+      },
+      "status": "available"
+    },
+    {
+      "unit_id": "amb-31",
+      "name": "SRZ ambulance 31 (simulated)",
+      "kind": "ambulance",
+      "centre": "144",
+      "location": {
+        "latitude": 47.3986,
+        "longitude": 8.5207
+      },
+      "status": "available"
+    },
+    {
+      "unit_id": "amb-05",
+      "name": "SRZ ambulance 05 (simulated)",
+      "kind": "ambulance",
+      "centre": "144",
+      "location": {
+        "latitude": 47.3785,
+        "longitude": 8.539
+      },
+      "status": "busy"
+    },
+    {
+      "unit_id": "fire-hb-1",
+      "name": "SRZ fire engine 1 (simulated)",
+      "kind": "fire_engine",
+      "centre": "118",
+      "location": {
+        "latitude": 47.382,
+        "longitude": 8.527
+      },
+      "status": "available"
+    },
+    {
+      "unit_id": "police-hb-1",
+      "name": "Transport police patrol HB (simulated)",
+      "kind": "police_patrol",
+      "centre": "117",
+      "location": {
+        "latitude": 47.3776,
+        "longitude": 8.541
+      },
+      "status": "available"
+    },
+    {
+      "unit_id": "rega-1",
+      "name": "Rega 1 helicopter, Dübendorf (simulated)",
+      "kind": "rega_helicopter",
+      "centre": "1414",
+      "location": {
+        "latitude": 47.3985,
+        "longitude": 8.64
+      },
+      "status": "available"
+    },
+    {
+      "unit_id": "fr-01",
+      "name": "First responder volunteer 1 (simulated)",
+      "kind": "first_responder",
+      "centre": "144",
+      "location": {
+        "latitude": 47.379,
+        "longitude": 8.5425
+      },
+      "status": "available"
+    },
+    {
+      "unit_id": "fr-02",
+      "name": "First responder volunteer 2 (simulated)",
+      "kind": "first_responder",
+      "centre": "144",
+      "location": {
+        "latitude": 47.3762,
+        "longitude": 8.537
+      },
+      "status": "available"
+    },
+    {
+      "unit_id": "fr-03",
+      "name": "First responder volunteer 3 (simulated)",
+      "kind": "first_responder",
+      "centre": "144",
+      "location": {
+        "latitude": 47.3865,
+        "longitude": 8.53
+      },
+      "status": "available"
+    },
+    {
+      "unit_id": "fr-04",
+      "name": "First responder volunteer 4 (simulated)",
+      "kind": "first_responder",
+      "centre": "144",
+      "location": {
+        "latitude": 47.377,
+        "longitude": 8.545
+      },
+      "status": "available"
+    },
+    {
+      "unit_id": "fr-05",
+      "name": "First responder volunteer 5 (simulated)",
+      "kind": "first_responder",
+      "centre": "144",
+      "location": {
+        "latitude": 47.378,
+        "longitude": 8.541
+      },
+      "status": "busy"
+    }
+  ],
+  "aeds": [
+    {
+      "aed_id": "aed-1",
+      "name": "AED at the ticket office, main hall (simulated)",
+      "location": {
+        "latitude": 47.3777,
+        "longitude": 8.54
+      },
+      "access_hint": "Behind the ticket office counter; staffed 06:00-22:00 (simulated)",
+      "available_24h": false
+    },
+    {
+      "aed_id": "aed-2",
+      "name": "AED at the platform 14 entrance (simulated)",
+      "location": {
+        "latitude": 47.3784,
+        "longitude": 8.5386
+      },
+      "access_hint": "Wall box next to the platform 14 stairs (simulated)",
+      "available_24h": true
+    },
+    {
+      "aed_id": "aed-3",
+      "name": "AED in the underground shopping level (simulated)",
+      "location": {
+        "latitude": 47.377,
+        "longitude": 8.541
+      },
+      "access_hint": "Wall box at the information desk, level -1 (simulated)",
+      "available_24h": true
+    },
+    {
+      "aed_id": "aed-4",
+      "name": "AED at the museum entrance (simulated)",
+      "location": {
+        "latitude": 47.37943,
+        "longitude": 8.54007
+      },
+      "access_hint": "Museum reception; museum opening hours only (simulated)",
+      "available_24h": false
+    },
+    {
+      "aed_id": "aed-5",
+      "name": "AED far away (simulated)",
+      "location": {
+        "latitude": 47.3665,
+        "longitude": 8.548
+      },
+      "access_hint": "Outside the search radius (simulated)",
+      "available_24h": true
+    }
+  ],
+  "hospitals": [
+    {
+      "hospital_id": "hosp-usz",
+      "name": "Universitätsspital Zürich",
+      "location": {
+        "latitude": 47.37655,
+        "longitude": 8.55117
+      },
+      "capabilities": [
+        "emergency_department",
+        "cardiac_cath_lab",
+        "stroke_unit",
+        "burns_unit",
+        "trauma_centre"
+      ]
+    },
+    {
+      "hospital_id": "hosp-triemli",
+      "name": "Stadtspital Zürich Triemli",
+      "location": {
+        "latitude": 47.36646,
+        "longitude": 8.49666
+      },
+      "capabilities": [
+        "emergency_department",
+        "cardiac_cath_lab",
+        "stroke_unit"
+      ]
+    },
+    {
+      "hospital_id": "hosp-waid",
+      "name": "Stadtspital Zürich Waid",
+      "location": {
+        "latitude": 47.39854,
+        "longitude": 8.5207
+      },
+      "capabilities": [
+        "emergency_department"
+      ]
+    },
+    {
+      "hospital_id": "hosp-hirslanden-park",
+      "name": "Hirslanden Klinik im Park",
+      "location": {
+        "latitude": 47.35246,
+        "longitude": 8.53203
+      },
+      "capabilities": [
+        "emergency_department",
+        "cardiac_cath_lab"
+      ]
+    }
+  ],
+  "voice_script": [
+    {
+      "speaker": "caller",
+      "text": "Hallo! Ein Mann ist hier in der Haupthalle vom Zürich HB zusammengebrochen, vor der grossen Anzeigetafel!"
+    },
+    {
+      "speaker": "caller",
+      "text": "Nein, er reagiert gar nicht. Er schnappt nur ab und zu nach Luft."
+    },
+    {
+      "speaker": "caller",
+      "text": "Ja, ich habe das Telefon auf Lautsprecher. Hier sind viele Leute, eine Frau kann helfen."
+    },
+    {
+      "speaker": "system",
+      "text": "The 144 operator approved: ambulance amb-11 is on the way, arrival in about 3 minutes. Three volunteer first responders are alerted."
+    },
+    {
+      "speaker": "caller",
+      "text": "Okay, ich drücke jetzt auf die Brust. Die Frau holt den Defibrillator."
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "primary": {
+    "repository": "20261010-hack-CH-ZH-ZRH-AgenticAI/resilix-web",
+    "commit": "c4dd4a3027222b2c961cf715305c7abdfc1977c2",
+    "path": "."
+  },
+  "workstreams": [
+    {
+      "repository": "ixsanpe/hackathon-tech-europe",
+      "ref": "main",
+      "commit": "05738311965a47a260bb98b9e5a6b906cd7843e2",
+      "path": "workstreams/alpineguard"
+    },
+    {
+      "repository": "ixsanpe/hackathon-tech-europe",
+      "ref": "swiss-disaster-data-integrations-12-sources",
+      "commit": "904997023bd5b3bc8b9a628dee14ab34ff50fd8b",
+      "path": "workstreams/crisisos"
+    },
+    {
+      "repository": "ixsanpe/hackathon-tech-europe",
+      "ref": "feat/emergency-tools",
+      "commit": "043ef59efeda830c366dca3a91cbc46d150575b5",
+      "path": "workstreams/emergency-tools"
+    }
+  ],
+  "preserved_branches": [
+    {
+      "branch": "docs/architecture-diagram",
+      "commit": "eda001845e5334c258b1bb45c166bc4ce842b515"
+    },
+    {
+      "branch": "feat/agents-phase-2-3",
+      "commit": "ae5843d372eb19a4490143b89b198a68f4e532ed"
+    },
+    {
+      "branch": "feat/data-integration",
+      "commit": "49c735f9497b14a3dcd61cd58d79fe2cfce8cb99"
+    },
+    {
+      "branch": "feat/emergency-tools",
+      "commit": "043ef59efeda830c366dca3a91cbc46d150575b5"
+    },
+    {
+      "branch": "main",
+      "commit": "05738311965a47a260bb98b9e5a6b906cd7843e2"
+    },
+    {
+      "branch": "release/v1-phase2-3",
+      "commit": "d3d01588bc6575d8557f995ffba610d7b468d48b"
+    },
+    {
+      "branch": "setup/entire-graph-brain",
+      "commit": "6b1f99dfe8625ba6c298cb18b3dc289ac8c810b8"
+    },
+    {
+      "branch": "setup/entire-runners",
+      "commit": "f9b18b0d0827765565c53559834ca7509080ca7e"
+    },
+    {
+      "branch": "swiss-disaster-data-integrations-12-sources",
+      "commit": "904997023bd5b3bc8b9a628dee14ab34ff50fd8b"
+    },
+    {
+      "branch": "test/alonso",
+      "commit": "395e17c80c384d328048ad67d6332be102f916e7"
+    }
+  ]
+}
