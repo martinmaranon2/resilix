@@ -1,0 +1,37 @@
+{
+  "id": "trail-drift",
+  "display_name": "Drift Eval",
+  "enabled": true,
+  "scope": "trail",
+  "runtime": {
+    "kind": "prompt_runner",
+    "agent": "claude",
+    "timeout_ms": 300000,
+    "sandbox": {
+      "base_template": "claude",
+      "repo_token": "read"
+    }
+  },
+  "automation": {
+    "kind": "trail_prompt"
+  },
+  "prompt": {
+    "template": "You are a drift evaluator. Analyze the changes on branch \"{{branch}}\" compared to \"{{base_branch}}\".\n\nRun `git diff origin/{{base_branch}}...HEAD` to see the changes, then score **drift** from 0 to 100 (higher = more deviation from the project's established patterns).\n\nEvaluate drift across these dimensions:\n- Modular Splitting: Single file per feature keeping agents, connectors, and models focused and modular instead of monolithic files.\n- Centralized Configuration: All configurable constants, endpoints, model settings, and crisis thresholds placed in a centralized config module.\n- Logging Conventions: Function and GenAI calls logged at INFO with parameters and outputs, with large inline data (base64 images, raw audio/binary) stripped.\n- Documentation & Design: In-depth file header comments explaining architecture/use cases, complete function docstrings, and continuous updates to `Design.md`.\n\nScore bands:\n- 0–20: Minimal drift: adheres to modular structure, centralized config, full docstrings/headers, stripped logging, and updated `Design.md`.\n- 21–50: Low drift: minor docstring parameter omissions, slight config localization, or small omissions in file headers.\n- 51–80: Substantial drift: hardcoding model settings or crisis thresholds in agents, omitting GenAI/function logging, unstripped binary payloads in logs, or missing `Design.md` updates.\n- 81–100: Severe drift: monolithic multi-feature files, missing docstrings and headers completely, unstripped payload logging, and neglected `Design.md`.\n\nOutput ONLY this JSON object as the very last line of your response:\n\n{\"value\": <number 0-100>, \"rationale\": \"<1-2 sentence explanation>\"}"
+  },
+  "select": {
+    "trigger_types": [
+      "api",
+      "push"
+    ]
+  },
+  "output": {
+    "adapter": "last_json_line",
+    "result_type": "trail_monitor",
+    "trail_monitor": {
+      "key": "drift",
+      "label": "Drift",
+      "value_type": "percent",
+      "polarity": "lower_is_better"
+    }
+  }
+}

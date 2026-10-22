@@ -1,0 +1,156 @@
+{
+  "scenario_id": "forest_fire_uetliberg",
+  "title": "Forest fire on the Uetliberg next to the S10 line",
+  "canton": "ZH",
+  "clock_start": "2026-08-14T16:20:00+02:00",
+  "data_note": "All calls, posts, hotspots, weather, frames, units, people counts, trains, the power line, assembly points and hospital capabilities are simulated. Place names, coordinates and terrain heights of stations, summits and hospitals are real (swisstopo search and height APIs, 2026-10-10). Rail and path geometry is approximate.",
+  "operator_goal": "Several calls report a forest fire on the Uetliberg. Prepare this incident for the 118 operator: merge the reports into one incident, assess the fire and its likely spread, find people, trains and infrastructure at risk, plan a safe evacuation route for the visitors on the summit, and propose every action that the operator should approve now. Finish with a short summary for the operator.",
+  "calls": [
+    {
+      "call_id": "call-fire-001",
+      "centre": "118",
+      "received_at": "2026-08-14T16:10:30+02:00",
+      "language": "de",
+      "location": {"latitude": 47.35720, "longitude": 8.48520, "altitude_m": 775},
+      "location_accuracy_m": 20,
+      "location_source": "aml",
+      "address_hint": "Waldweg oberhalb Ringlikon",
+      "caller_number_masked": "+41 76 *** ** 41",
+      "transcript": [
+        "Caller: Feuerwehr? Es brennt im Wald unterhalb vom Uetliberg, zwischen Ringlikon und der Bergstation, direkt neben der Bahnlinie!",
+        "Voice agent: Wie gross ist das Feuer, und wohin zieht der Rauch?",
+        "Caller: Vielleicht so gross wie ein Fussballfeld. Es raucht stark, der Wind treibt den Rauch Richtung Stadt.",
+        "Caller: Wir sind zu viert und gehen jetzt den Weg runter Richtung Ringlikon."
+      ]
+    },
+    {
+      "call_id": "call-fire-002",
+      "centre": "118",
+      "received_at": "2026-08-14T16:12:05+02:00",
+      "language": "de",
+      "location": {"latitude": 47.36200, "longitude": 8.50450, "altitude_m": 495},
+      "location_accuracy_m": 35,
+      "location_source": "aml",
+      "address_hint": "Friesenberg",
+      "caller_number_masked": "+41 44 *** ** 87",
+      "transcript": [
+        "Caller: Über dem Uetliberg ist eine riesige Rauchwolke, der Rauch kommt zu uns runter nach Friesenberg.",
+        "Caller: Mein Name ist Peter Huber, Telefon 044 461 22 87. Müssen wir die Fenster schliessen?"
+      ]
+    },
+    {
+      "call_id": "call-fire-003",
+      "centre": "118",
+      "received_at": "2026-08-14T16:13:40+02:00",
+      "language": "de",
+      "location": {"latitude": 47.34978, "longitude": 8.49084, "altitude_m": 870},
+      "location_accuracy_m": 10,
+      "location_source": "aml",
+      "address_hint": "Uto Kulm, Gipfel Uetliberg",
+      "caller_number_masked": "+41 79 *** ** 06",
+      "transcript": [
+        "Caller: Hier ist Sandra Keller vom Hotel Uto Kulm. Wir sehen Rauch nördlich von uns, unterhalb der Bahnstation.",
+        "Caller: Wir haben etwa 180 Gäste auf dem Gipfel. Sollen wir sie mit dem Zug runterschicken? Der nächste Zug fährt gleich."
+      ]
+    }
+  ],
+  "social_posts": [
+    {"post_id": "post-001", "platform": "social media (simulated)", "posted_at": "2026-08-14T16:11:20+02:00", "text": "Smoke rising from the Uetliberg forest right now, close to the train line #Zürich", "location": {"latitude": 47.37000, "longitude": 8.51000}},
+    {"post_id": "post-002", "platform": "social media (simulated)", "posted_at": "2026-08-14T16:13:05+02:00", "text": "Rauch über dem Üetliberg, man riecht es bis in den Kreis 3", "location": null}
+  ],
+  "units": [
+    {"unit_id": "fire-tlf-1", "name": "SRZ fire engine TLF 1 (simulated)", "kind": "fire_engine", "centre": "118", "location": {"latitude": 47.37000, "longitude": 8.52000}, "status": "available"},
+    {"unit_id": "fire-tlf-2", "name": "SRZ fire engine TLF 2 (simulated)", "kind": "fire_engine", "centre": "118", "location": {"latitude": 47.38800, "longitude": 8.51700}, "status": "available"},
+    {"unit_id": "fire-stallikon", "name": "Stallikon volunteer fire brigade (simulated)", "kind": "fire_engine", "centre": "118", "location": {"latitude": 47.32092, "longitude": 8.49171}, "status": "available"},
+    {"unit_id": "heli-army-1", "name": "Army Super Puma with water bucket (simulated)", "kind": "firefighting_helicopter", "centre": "118", "location": {"latitude": 47.39850, "longitude": 8.64000}, "status": "available"},
+    {"unit_id": "police-12", "name": "Cantonal police patrol 12 (simulated)", "kind": "police_patrol", "centre": "117", "location": {"latitude": 47.36500, "longitude": 8.50000}, "status": "available"},
+    {"unit_id": "police-04", "name": "City police patrol 4 (simulated)", "kind": "police_patrol", "centre": "117", "location": {"latitude": 47.37200, "longitude": 8.51500}, "status": "available"},
+    {"unit_id": "amb-31", "name": "SRZ ambulance 31 (simulated)", "kind": "ambulance", "centre": "144", "location": {"latitude": 47.37000, "longitude": 8.51000}, "status": "available"},
+    {"unit_id": "drone-1", "name": "SRZ drone 1 (simulated)", "kind": "drone", "centre": "118", "location": {"latitude": 47.35700, "longitude": 8.48500}, "status": "busy"}
+  ],
+  "aeds": [],
+  "hospitals": [
+    {"hospital_id": "hosp-usz", "name": "Universitätsspital Zürich", "location": {"latitude": 47.37655, "longitude": 8.55117}, "capabilities": ["emergency_department", "cardiac_cath_lab", "stroke_unit", "burns_unit", "trauma_centre"]},
+    {"hospital_id": "hosp-triemli", "name": "Stadtspital Zürich Triemli", "location": {"latitude": 47.36646, "longitude": 8.49666}, "capabilities": ["emergency_department", "cardiac_cath_lab", "stroke_unit"]},
+    {"hospital_id": "hosp-waid", "name": "Stadtspital Zürich Waid", "location": {"latitude": 47.39854, "longitude": 8.52070}, "capabilities": ["emergency_department"]}
+  ],
+  "fire": {
+    "danger_level": 4,
+    "hotspots": [
+      {"hotspot_id": "hs-001", "location": {"latitude": 47.35600, "longitude": 8.48100, "altitude_m": 762}, "detected_at": "2026-08-14T16:08:00+02:00", "confidence": "high", "fire_radiative_power_mw": 21.4, "source": "geostationary satellite fire product (simulated)"}
+    ],
+    "weather": {
+      "location": {"latitude": 47.34978, "longitude": 8.49084, "altitude_m": 870},
+      "observed_at": "2026-08-14T16:00:00+02:00",
+      "wind_speed_kmh": 28,
+      "wind_from_deg": 240,
+      "gust_kmh": 45,
+      "temperature_c": 31,
+      "relative_humidity_pct": 22,
+      "source": "simulated (later: crisis_data.get_weather, Open-Meteo)"
+    },
+    "frames": [
+      {"frame_id": "frame-drone-1", "sensor_kind": "drone", "sensor_name": "SRZ drone 1 (simulated)", "location": {"latitude": 47.35700, "longitude": 8.48500}, "captured_at": "2026-08-14T16:18:00+02:00", "scripted_observation": "Fire front about 150 m wide on the west slope between Ringlikon and Uetliberg station. Flames reach the edge of the S10 track. Smoke drifts east-north-east towards Triemli. Four people are visible on the forest path about 300 m north of the fire, walking towards Ringlikon.", "image_path": null},
+      {"frame_id": "frame-tower-cam", "sensor_kind": "fixed_camera", "sensor_name": "Uetliberg tower camera (simulated)", "location": {"latitude": 47.34953, "longitude": 8.49136, "altitude_m": 870}, "captured_at": "2026-08-14T16:15:00+02:00", "scripted_observation": "Dense grey smoke column north-west of the summit, below the S10 terminus. No flames visible from the tower. Many visitors on the summit platform.", "image_path": null}
+    ]
+  },
+  "exposure": {
+    "sites": [
+      {"site_id": "site-uto-kulm", "name": "Uto Kulm summit: hotel, restaurant and viewing tower", "kind": "visitor_site", "location": {"latitude": 47.34978, "longitude": 8.49084, "altitude_m": 870}, "people_estimate": 180},
+      {"site_id": "site-uetliberg-station", "name": "Uetliberg S10 station", "kind": "train_station", "location": {"latitude": 47.35208, "longitude": 8.48755, "altitude_m": 813}, "people_estimate": 40},
+      {"site_id": "site-trail-north", "name": "Hikers on the forest path above Ringlikon", "kind": "hiking_trail", "location": {"latitude": 47.35700, "longitude": 8.48450, "altitude_m": 775}, "people_estimate": 25},
+      {"site_id": "site-forest-edge", "name": "Houses at the Triemli forest edge", "kind": "residential_area", "location": {"latitude": 47.36220, "longitude": 8.49500, "altitude_m": 510}, "people_estimate": 350},
+      {"site_id": "site-ringlikon", "name": "Ringlikon hamlet", "kind": "residential_area", "location": {"latitude": 47.35914, "longitude": 8.47043, "altitude_m": 649}, "people_estimate": 120}
+    ],
+    "assets": [
+      {"asset_id": "rail-s10-upper", "name": "S10 Uetlibergbahn, Ringlikon - Uetliberg", "kind": "rail_line", "operator": "SZU", "path": [{"latitude": 47.36030, "longitude": 8.47743}, {"latitude": 47.35700, "longitude": 8.48150}, {"latitude": 47.35208, "longitude": 8.48755}]},
+      {"asset_id": "rail-s10-lower", "name": "S10 Uetlibergbahn, Uitikon Waldegg - Ringlikon", "kind": "rail_line", "operator": "SZU", "path": [{"latitude": 47.36592, "longitude": 8.46592}, {"latitude": 47.36030, "longitude": 8.47743}]},
+      {"asset_id": "power-uetliberg-16kv", "name": "16 kV supply line to the Uetliberg summit (simulated)", "kind": "power_line", "operator": "Electricity utility (simulated)", "path": [{"latitude": 47.36300, "longitude": 8.48600}, {"latitude": 47.35700, "longitude": 8.48800}, {"latitude": 47.35100, "longitude": 8.49000}]},
+      {"asset_id": "road-uetliberg-forest", "name": "Forest road Ringlikon - Uetliberg (simulated)", "kind": "road", "operator": "Canton of Zürich forestry (simulated)", "path": [{"latitude": 47.36030, "longitude": 8.47743}, {"latitude": 47.35620, "longitude": 8.48350}, {"latitude": 47.35208, "longitude": 8.48755}]}
+    ],
+    "trains": [
+      {"train_id": "train-s10-up", "service_name": "S10 to Uetliberg", "line_asset_id": "rail-s10-upper", "location": {"latitude": 47.36030, "longitude": 8.47743}, "heading_to": "Uetliberg", "passengers_estimate": 70},
+      {"train_id": "train-s10-down", "service_name": "S10 to Zürich HB", "line_asset_id": "rail-s10-upper", "location": {"latitude": 47.35208, "longitude": 8.48755}, "heading_to": "Zürich HB", "passengers_estimate": 35}
+    ]
+  },
+  "paths": {
+    "nodes": [
+      {"node_id": "n-uto-kulm", "name": "Uto Kulm summit", "location": {"latitude": 47.34978, "longitude": 8.49084, "altitude_m": 870}},
+      {"node_id": "n-uetliberg-station", "name": "Uetliberg station", "location": {"latitude": 47.35208, "longitude": 8.48755, "altitude_m": 813}},
+      {"node_id": "n-trail-junction", "name": "Forest junction above Ringlikon", "location": {"latitude": 47.35620, "longitude": 8.48350, "altitude_m": 783}},
+      {"node_id": "n-ringlikon", "name": "Ringlikon station", "location": {"latitude": 47.36030, "longitude": 8.47743, "altitude_m": 685}},
+      {"node_id": "n-waldegg", "name": "Uitikon Waldegg station", "location": {"latitude": 47.36592, "longitude": 8.46592, "altitude_m": 620}},
+      {"node_id": "n-triemli", "name": "Zürich Triemli station", "location": {"latitude": 47.36499, "longitude": 8.49538, "altitude_m": 480}},
+      {"node_id": "n-annaburg", "name": "Annaburg", "location": {"latitude": 47.34513, "longitude": 8.49802, "altitude_m": 789}},
+      {"node_id": "n-ridge-north", "name": "Planetenweg ridge (north)", "location": {"latitude": 47.33800, "longitude": 8.50000, "altitude_m": 768}},
+      {"node_id": "n-ridge-south", "name": "Planetenweg ridge (south)", "location": {"latitude": 47.33000, "longitude": 8.50000, "altitude_m": 757}},
+      {"node_id": "n-baldern", "name": "Baldern", "location": {"latitude": 47.31491, "longitude": 8.50609, "altitude_m": 790}},
+      {"node_id": "n-felsenegg", "name": "Felsenegg", "location": {"latitude": 47.30889, "longitude": 8.50894, "altitude_m": 782}},
+      {"node_id": "n-adliswil-cable-car", "name": "Adliswil cable car station", "location": {"latitude": 47.31346, "longitude": 8.52004, "altitude_m": 495}},
+      {"node_id": "n-sellenbueren", "name": "Sellenbüren", "location": {"latitude": 47.34299, "longitude": 8.48331, "altitude_m": 553}},
+      {"node_id": "n-stallikon", "name": "Stallikon", "location": {"latitude": 47.32092, "longitude": 8.49171, "altitude_m": 570}}
+    ],
+    "edges": [
+      {"from_node_id": "n-uto-kulm", "to_node_id": "n-uetliberg-station", "name": "Kulmweg", "kind": "footpath"},
+      {"from_node_id": "n-uetliberg-station", "to_node_id": "n-trail-junction", "name": "Gratweg north", "kind": "footpath"},
+      {"from_node_id": "n-trail-junction", "to_node_id": "n-ringlikon", "name": "Forest path to Ringlikon", "kind": "footpath"},
+      {"from_node_id": "n-ringlikon", "to_node_id": "n-waldegg", "name": "Ringlikerstrasse", "kind": "road"},
+      {"from_node_id": "n-trail-junction", "to_node_id": "n-triemli", "name": "Forest path to Triemli", "kind": "footpath"},
+      {"from_node_id": "n-uto-kulm", "to_node_id": "n-annaburg", "name": "Planetenweg", "kind": "footpath"},
+      {"from_node_id": "n-annaburg", "to_node_id": "n-ridge-north", "name": "Planetenweg", "kind": "footpath"},
+      {"from_node_id": "n-ridge-north", "to_node_id": "n-ridge-south", "name": "Planetenweg", "kind": "footpath"},
+      {"from_node_id": "n-ridge-south", "to_node_id": "n-baldern", "name": "Planetenweg", "kind": "footpath"},
+      {"from_node_id": "n-baldern", "to_node_id": "n-felsenegg", "name": "Planetenweg", "kind": "footpath"},
+      {"from_node_id": "n-felsenegg", "to_node_id": "n-adliswil-cable-car", "name": "Cable car Felsenegg - Adliswil", "kind": "cable_car"},
+      {"from_node_id": "n-uto-kulm", "to_node_id": "n-sellenbueren", "name": "Path to Sellenbüren", "kind": "footpath"},
+      {"from_node_id": "n-sellenbueren", "to_node_id": "n-stallikon", "name": "Reppischtalstrasse", "kind": "road"}
+    ],
+    "assembly_points": [
+      {"point_id": "ap-triemli", "name": "Assembly point Triemli station (simulated)", "node_id": "n-triemli", "capacity": 600},
+      {"point_id": "ap-waldegg", "name": "Assembly point Uitikon Waldegg station (simulated)", "node_id": "n-waldegg", "capacity": 200},
+      {"point_id": "ap-sellenbueren", "name": "Assembly point Sellenbüren (simulated)", "node_id": "n-sellenbueren", "capacity": 120},
+      {"point_id": "ap-felsenegg", "name": "Assembly point Felsenegg (simulated)", "node_id": "n-felsenegg", "capacity": 400},
+      {"point_id": "ap-adliswil", "name": "Assembly point Adliswil cable car station (simulated)", "node_id": "n-adliswil-cable-car", "capacity": 800}
+    ]
+  }
+}

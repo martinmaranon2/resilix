@@ -1,0 +1,37 @@
+{
+  "id": "trail-risk",
+  "display_name": "Risk Eval",
+  "enabled": true,
+  "scope": "trail",
+  "runtime": {
+    "kind": "prompt_runner",
+    "agent": "claude",
+    "timeout_ms": 300000,
+    "sandbox": {
+      "base_template": "claude",
+      "repo_token": "read"
+    }
+  },
+  "automation": {
+    "kind": "trail_prompt"
+  },
+  "prompt": {
+    "template": "You are a risk evaluator. Analyze the changes on branch \"{{branch}}\" compared to \"{{base_branch}}\".\n\nRun `git diff origin/{{base_branch}}...HEAD` to see the changes, then score **risk** from 0 to 100 (higher = more potential damage if something is wrong).\n\nEvaluate risk across these dimensions:\n- Crisis & Agent Orchestration: Changes to supervisor coordination (`supervisor_agent.py`), avalanche hazard calculation, or evacuation routing where failures could impact life safety.\n- External Feed Reliability: Modifications to Swiss data connector (`swiss_data.py`), real-time emergency feed parsing, and network failure resilience.\n- Domain & Model Integrity: Changes to crisis domain states (`domain.py`), multimodal model schemas, or core safety thresholds.\n- GenAI Execution Risk: Modifications to multimodal prompt construction, inference parameters, or unhandled GenAI exceptions during crisis triage.\n\nScore bands:\n- 0–20: Low risk: Documentation updates (README, Design.md), comments, formatting, or isolated non-functional test additions.\n- 21–50: Moderate risk: Updates to simulation harnesses (`demo_simulation.py`), logging instrumentation, or isolated helper functions with test coverage.\n- 51–80: High risk: Changes to connector logic (`swiss_data.py`), multimodal model processing, configuration thresholds, or single-agent decision logic without exhaustive verification.\n- 81–100: Critical risk: Modifications to multi-agent supervisor orchestration (`supervisor_agent.py`), breaking changes to domain state schemas (`domain.py`), or unverified changes impacting evacuation and avalanche safety decisions.\n\nOutput ONLY this JSON object as the very last line of your response:\n\n{\"value\": <number 0-100>, \"rationale\": \"<1-2 sentence explanation>\"}"
+  },
+  "select": {
+    "trigger_types": [
+      "api",
+      "push"
+    ]
+  },
+  "output": {
+    "adapter": "last_json_line",
+    "result_type": "trail_monitor",
+    "trail_monitor": {
+      "key": "risk",
+      "label": "Risk",
+      "value_type": "percent",
+      "polarity": "lower_is_better"
+    }
+  }
+}

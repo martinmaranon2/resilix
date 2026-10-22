@@ -1,0 +1,37 @@
+{
+  "id": "trail-confidence",
+  "display_name": "Confidence Eval",
+  "enabled": true,
+  "scope": "trail",
+  "runtime": {
+    "kind": "prompt_runner",
+    "agent": "claude",
+    "timeout_ms": 300000,
+    "sandbox": {
+      "base_template": "claude",
+      "repo_token": "read"
+    }
+  },
+  "automation": {
+    "kind": "trail_prompt"
+  },
+  "prompt": {
+    "template": "You are a confidence evaluator. Analyze the changes on branch \"{{branch}}\" compared to \"{{base_branch}}\".\n\nRun `git diff origin/{{base_branch}}...HEAD` to see the changes, then score **confidence** from 0 to 100 (higher = more confident the changes are correct and well-tested).\n\nEvaluate the changes across these dimensions:\n- Test Verification: Unit test coverage in `tests/test_agents.py` and crisis scenario validation in `demo_simulation.py`, covering failure modes and edge cases.\n- Connector & Model Safety: Robust exception handling for external crisis feeds (`swiss_data.py`) and schema integrity for domain/multimodal models.\n- Logging & Observability: Function and GenAI calls logged at INFO with parameters and outputs, with large binary/base64 payloads stripped.\n- Documentation & Design Sync: Complete function docstrings (purpose, params, returns, exceptions), file architecture headers, and `Design.md` synchronization.\n\nScore bands:\n- 0–25: Core agent or connector logic modified with missing/broken tests, unhandled emergency feed exceptions, or unverified decision paths.\n- 26–50: Agent, connector, or domain model changes with superficial tests, unhandled API timeouts/malformed data, or omitted GenAI logging.\n- 51–75: Solid test coverage in `tests/test_agents.py` and proper error handling, but missing simulation testing or minor docstring/logging gaps.\n- 76–100: Comprehensive unit and simulation tests, defensive error handling across connectors, full docstrings, payload-stripped logging, and updated `Design.md`.\n\nOutput ONLY this JSON object as the very last line of your response:\n\n{\"value\": <number 0-100>, \"rationale\": \"<1-2 sentence explanation>\"}"
+  },
+  "select": {
+    "trigger_types": [
+      "api",
+      "push"
+    ]
+  },
+  "output": {
+    "adapter": "last_json_line",
+    "result_type": "trail_monitor",
+    "trail_monitor": {
+      "key": "confidence",
+      "label": "Confidence",
+      "value_type": "percent",
+      "polarity": "higher_is_better"
+    }
+  }
+}

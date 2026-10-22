@@ -1,0 +1,29 @@
+{
+  "protocol_id": "wildfire_caller_safety_v1",
+  "category": "wildfire",
+  "title": "Forest fire: questions and safety instructions for callers",
+  "approval_status": "DEMO CONTENT - not approved by a fire service. Based on the public advice listed in sources.",
+  "sources": [
+    {
+      "title": "SRF Ratgeber: Fünf Regeln - Wie verhalte ich mich bei einem Waldbrand?",
+      "url": "https://www.srf.ch/news/ratgeber/fuenf-regeln-wie-verhalte-ich-mich-bei-einem-waldbrand",
+      "published": "2026-07-13",
+      "note": "Advice quoted from Alberto Ceronetti (deputy commander, Feuerwehr Mendrisiotto), AlertSwiss and BAFU; translated to English."
+    }
+  ],
+  "recognition": "Smoke, flames or strong heat are clear warning signs, even when there is no official warning yet.",
+  "questions": [
+    "Where exactly do you see the fire or the smoke? Name a landmark, path, road or railway line.",
+    "How big is the fire? Is it near houses, a road, a railway line or on a slope?",
+    "Which way does the smoke move?",
+    "Are you or other people in danger now? How many people are with you?"
+  ],
+  "instructions": [
+    "If you see smoke or flames or feel strong heat, leave the area at once.",
+    "Never flee uphill: fire spreads faster uphill. Move downhill or along the slope, away from the fire.",
+    "Avoid narrow valleys and gullies. A stream does not give reliable protection.",
+    "An area that has already burned is safer, because material burns only once.",
+    "If you are already in a car, it is usually safer to stay in it than to go out into the heat and smoke.",
+    "Follow the instructions of the authorities (AlertSwiss, police, fire brigade). Return only when the authorities allow it."
+  ]
+}

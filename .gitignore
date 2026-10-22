@@ -67,3 +67,8 @@ wallet.json
 keystore/
 
 !.env.example
+
+# Local Python verification environments anywhere in the repository
+**/.venv/
+**/__pycache__/
+**/*.pyc

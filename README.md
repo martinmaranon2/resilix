@@ -1,4 +1,38 @@
-# Resilix web
+# Resilix — Agentic Disaster Awareness
+
+One project repository containing the final integrated Resilix web application and the original Tech Europe development workstreams. The team combined the individual workstreams into [the final public app](https://github.com/20261010-hack-CH-ZH-ZRH-AgenticAI/resilix-web); this fork keeps that application and the earlier contribution evidence together.
+
+## Repository layout
+
+| Path | What it contains |
+| --- | --- |
+| Repository root (`src/`, `public/`, `vendor/`) | Final integrated Bun/Next.js web app; run the web commands below from this root |
+| `workstreams/crisisos/` | Martin's Swiss data-integration workstream, including provider clients, models, tools, design notes and smoke runner |
+| `workstreams/alpineguard/` | Earlier Python emergency-response simulation |
+| `workstreams/emergency-tools/` | Python emergency tools, background/voice agent logic, simulated world, approval flow and scenario tests |
+| `history/` | Restorable Git history for the original workstreams and their exact source references |
+| `SOURCES.json` | Original repositories, branches, commit IDs and folder mappings |
+
+The workstreams are preserved development versions. They are not automatically substituted for the final application's backend. The web app requires a compatible HTTP/WebSocket backend at `API_BASE_URL`. All ten original Tech Europe branches were checked: the emergency-tools branch contains Python agents and tool logic, now included here, but no server implementing the final web app's authentication/session and API contracts was found. The public organization exposes only `resilix-web`; do not assume the earlier agent scripts are a drop-in HTTP backend.
+
+### Earlier workstream commands
+
+```sh
+# From this repository's root; Python standard library only.
+python3 workstreams/alpineguard/demo_simulation.py
+python3 -m unittest discover -s workstreams/alpineguard/tests -v
+
+# Run the CrisisOS workstream separately.
+cd workstreams/crisisos
+python3 -m venv .venv
+.venv/bin/python -m pip install requests python-dotenv
+.venv/bin/python -c "import crisis_data.agent_tools; print('Tool imports OK')"
+```
+
+Live CrisisOS provider checks are optional and make network requests: run `.venv/bin/python test_integrations.py` from that workstream after configuring its `.env`. These checks do not start the final Resilix backend.
+
+## Final web application
+
 
 Resilix is a Bun / Next.js / TypeScript PWA for source-linked hazard awareness, private observations, conversational AI, and human-reviewed preparedness simulations. The public pitch deck is `/deck/JO202610101600`.
 

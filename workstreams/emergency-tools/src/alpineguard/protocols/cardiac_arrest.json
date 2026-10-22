@@ -1,0 +1,38 @@
+{
+  "protocol_id": "cardiac_arrest_telephone_cpr_v1",
+  "category": "cardiac_arrest",
+  "title": "Telephone CPR for an adult (chest compressions only)",
+  "approval_status": "DEMO CONTENT - not approved by a medical director. Based on the public guidelines listed in sources.",
+  "sources": [
+    {
+      "title": "European Resuscitation Council Guidelines 2025: Adult Basic Life Support",
+      "reference": "Resuscitation 2025;215 Suppl 1:110771, doi:10.1016/j.resuscitation.2025.110771"
+    },
+    {
+      "title": "Resuscitation Council UK 2025 Adult Basic Life Support Guidelines (cites ERC 2025)",
+      "url": "https://www.resus.org.uk/professional-library/2025-resuscitation-guidelines/adult-basic-life-support-guidelines",
+      "published": "2025-10-27",
+      "note": "Source of the quoted recognition, compression and AED wording; the emergency number was changed from 999 to the Swiss numbers 144/112."
+    }
+  ],
+  "recognition": "If the person is unresponsive and not breathing normally, assume cardiac arrest. Gasping, panting, or slow and laboured breathing are signs of cardiac arrest, not normal breathing.",
+  "questions": [
+    "Where exactly are you? Tell me the address or a landmark.",
+    "Is the person awake? Do they react when you speak loudly to them?",
+    "Is the person breathing normally? Gasping or panting is not normal breathing.",
+    "Can you put your phone on speaker and stay with the person?",
+    "Is someone with you who can fetch a defibrillator (AED)?"
+  ],
+  "instructions": [
+    "Put your phone on speaker and place it next to you.",
+    "Kneel next to the person. Place the heel of one hand on the lower half of the breastbone, in the centre of the chest. Put your other hand on top and interlock your fingers.",
+    "Keep your arms straight, with your shoulders above your hands.",
+    "Push down hard: at least 5 cm, but not more than 6 cm. Push 100 to 120 times per minute. I will count the rhythm with you.",
+    "Let the chest come back up completely after each push. Do not lean on the chest.",
+    "Keep pushing with as few interruptions as possible.",
+    "If someone is with you, send them to fetch the AED now. Switch it on and follow its voice and screen instructions.",
+    "After a shock, or if no shock is advised, start pushing again at once.",
+    "If you are trained to give rescue breaths and are willing, give 2 breaths after every 30 pushes. If not, keep pushing without breaths.",
+    "Continue until the ambulance team takes over or the person starts to breathe normally."
+  ]
+}
